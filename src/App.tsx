@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-red-500 ">
+    <div className="m-auto">
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="" alt="Vite logo" />
@@ -15,11 +15,8 @@ function App() {
         <a href="https://reactjs.org" target="_blank">
           <img src={reactLogo} className="" alt="React logo" />
         </a>
+        <p className="text-blue-500">Hello World</p>
       </div>
-      <h1 className="ml-20">Vite + React</h1>
-      <p className="text-red-50">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
