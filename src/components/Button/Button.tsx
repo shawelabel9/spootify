@@ -2,7 +2,8 @@ import React from 'react'
 import MuiButton from '@mui/material/Button'
 import {styled} from '@mui/material/styles'
 
-export const Button = styled(MuiButton)((props)=>({
+
+export const StyledButton = styled(MuiButton)((props)=>({
     ...props,
     borderRadius: 50,
     backgroundColor:'#32C232',
@@ -11,8 +12,11 @@ export const Button = styled(MuiButton)((props)=>({
     margin: '20px 0 0 0',
     padding: '10px 20px 10px 20px',
     maxWidth: '100%',
-    hover:{
-        backgroundColor:'none'
+    '&:hover':{
+        backgroundColor:'#028002'
+    },
+    '&:active':{
+        backgroundColor:'#32C232'
     }
 }))
     
