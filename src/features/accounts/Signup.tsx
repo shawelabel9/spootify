@@ -1,5 +1,5 @@
 import React from 'react'
-import SpotifyIcon from '../../components/icons/SpotfiyIcon'
+import SpotifyIcon from '../../components/Icons/SpotfiyIcon'
 import Divider from '@mui/material/Divider'
 import TextField from '@mui/material/TextField'
 import {StyledButton} from '../../components/Button/Button'

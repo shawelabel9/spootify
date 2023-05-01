@@ -24,11 +24,11 @@ const AccountDropdown = () => {
       </div>
       {
         collapse?null:
-        <div className="flex flex-col my-2 gap-2 px-1 py-2 rounded-lg bg-zinc-700">
-          <p className="text-white bg-zinc-700 px-2 hover:bg-zinc-600 cursor-pointer">Profile</p>
-          <p className="text-white bg-zinc-700 px-2 hover:bg-zinc-600 cursor-pointer">Settings</p>
+        <div className="flex flex-col my-2 gap-2 px-1 py-2 rounded-lg bg-zinc-700 absolute z-10">
+          <p className="text-white bg-zinc-700 pr-10 hover:bg-zinc-600 cursor-pointer">Profile</p>
+          <p className="text-white bg-zinc-700 pr-10 hover:bg-zinc-600 cursor-pointer">Settings</p>
           <Divider className="bg-gray-400 m-0"/>
-          <p className="text-white bg-zinc-700 px-2 hover:bg-zinc-600 cursor-pointer">Logout</p>
+          <p className="text-white bg-zinc-700 pr-10 hover:bg-zinc-600 cursor-pointer">Logout</p>
         </div>
       }
     </>

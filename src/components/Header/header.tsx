@@ -6,7 +6,7 @@ import AccountDropdown from '../AccountDropdown/AccountDropdown'
 
 const Header = () => {
   return (
-    <div className="flex justify-between gap-2 mx-2 text-white">
+    <div className="flex justify-between gap-2 text-white">
         <div>
             <HeaderButton>Playlists</HeaderButton>
             <HeaderButton>Podcasts</HeaderButton>
