@@ -11,9 +11,10 @@ function App() {
     <div className="m-auto">
       <Router>
         <Routes>
-          <Route index path="/" element={<Login/>}></Route>
-          <Route index path="/signup" element={<Signup/>}></Route>
-          <Route index path="/home" element={<Home/>}></Route>
+          <Route path="/" element={<Login/>}></Route>
+          <Route path="/signup" element={<Signup/>}></Route>
+          <Route path="/home/*" element={<Home/>}></Route>
+          {/* <Route path="/home" element={<Home/>}></Route> */}
           <Route path="/playlist" element={<Playlist/>}></Route>
         </Routes>
       </Router>
