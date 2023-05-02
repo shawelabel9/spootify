@@ -81,7 +81,7 @@ const rows = [
 
 export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(15);
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -93,32 +93,41 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden', backgroundColor:'gray' }}>
-      <TableContainer sx={{ maxHeight: 440, }}>
-        <Table stickyHeader>
-          <TableHead>
-            <TableRow>
+    <Paper sx={{ width: '100%', overflow: 'hidden',borderRadius:'0px' }}>
+      <TableContainer sx={{ maxHeight: 440,  "&::-webkit-scrollbar": {
+	  width: 20
+    },
+    "&::-webkit-scrollbar-track": {
+	  backgroundColor: "rgb(39 39 42)"
+    },
+    "&::-webkit-scrollbar-thumb": {
+	  backgroundColor: "gray",
+	  borderRadius: 2
+    } }}>
+        <Table stickyHeader >
+          <TableHead >
+            <TableRow  >
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth, backgroundColor:'rgb(39 39 42)',color:'rgb(161 161 170)' }}
                 >
                   {column.label}
                 </TableCell>
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody style={{}}>
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.number}>
+                  <TableRow role="checkbox" tabIndex={-1} key={row.number}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell key={column.id} align={column.align} style={{borderBottom:'none', backgroundColor:'rgb(39 39 42)',color:'rgb(161 161 170)',cursor:'pointer',}}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
@@ -132,13 +141,13 @@ export default function StickyHeadTable() {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
+        style={{backgroundColor:'rgb(39 39 42)',color:'rgb(161 161 170)'}}
       />
     </Paper>
   );
