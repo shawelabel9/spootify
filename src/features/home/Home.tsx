@@ -9,11 +9,8 @@ const Home = () => {
     return (
         <div className="bg-zinc-700">
             <div className="flex flex-col min-h-screen mx-auto px-2 max-w-4xl rounded-xl bg-zinc-800">
-               
-                {/* <Header />
-                <PlaylistCard title="Hot Country" category='Playlist. Spotify'/> */}
-                <Playlist/>
-                <PlaylistTable/>
+                <Header />
+                <PlaylistCard title="Hot Country" category='Playlist. Spotify'/>
             </div>
         </div>
     )   

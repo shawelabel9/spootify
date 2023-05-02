@@ -2,8 +2,11 @@ import React from 'react'
 import SpotifyIcon from '../../components/Icons/SpotfiyIcon'
 import { Divider,TextField } from '@mui/material'
 import {StyledButton} from '../../components/Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate()
+  
   return (
     <>
         <header className="flex justify-center m-5 gap-2 text-3xl">
@@ -17,12 +20,12 @@ const Login = () => {
                 <TextField required placeholder='Email address or username' type='email'/>
                 <label><strong>Password</strong></label>
                 <TextField required placeholder='Password'type="password"/>
-                <StyledButton variant='contained' type="submit" >Log in</StyledButton>
+                <StyledButton variant='contained' type="submit" onClick={() => {navigate('/home')}}>Log in</StyledButton>
             </form>
           <Divider />
           <div className="my-8 text-center flex flex-col gap-4">
             <p><strong >Don't have an account?</strong></p>
-            <StyledButton variant="contained">SIGN UP FOR SPOTIFY</StyledButton>
+            <StyledButton variant="contained" onClick={() => {navigate('/signup')}}>SIGN UP FOR SPOTIFY</StyledButton>
           </div>
         </div>
 

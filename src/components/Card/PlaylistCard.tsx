@@ -4,6 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
 
 interface CardTitle{
   title:string;
@@ -11,10 +13,11 @@ interface CardTitle{
 }
 
 const PlaylistCard = ({title,category}:CardTitle) => {
+  const navigate = useNavigate()
   return (
     <Card sx={{ maxWidth: 200,padding:'10px',position:'relative',left:'0px',top:'0px', backgroundColor:'rgb(39 39 42 )', '&:hover':{
       backgroundColor:'rgb(63 63 70)'
-  } }}>
+  } }} onClick={() => navigate('/playlist')}>
       <CardActionArea>
         <CardMedia
           component="img"

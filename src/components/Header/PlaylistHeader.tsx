@@ -4,14 +4,15 @@ import AccountDropdown from '../AccountDropdown/AccountDropdown'
 import Typography from '@mui/material/Typography'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useNavigate } from 'react-router-dom';
 
 const PlaylistHeader = () => {
+    const navigate = useNavigate()
   return (
     <div className="h-52 bg-cover bg-center bg-gray-900 justify-between flex flex-col" style={{backgroundImage:"url('https://th.bing.com/th/id/R.b61b28f1af9c5cab770b37992c671147?rik=LZXOhdwSxgKwtg&pid=ImgRaw&r=0')",backgroundColor:"#737272"}}>
         <div className=' m-2 text-white flex justify-between'>
             <div className='flex mx-2 cursor-pointer gap-2'>
-                <div className='border rounded-full bg-zinc-700 text-zinc-300 text-center '><ArrowBackIosIcon/></div>
-                <div className='border rounded-full bg-zinc-700  text-zinc-300 text-center '><ArrowForwardIosIcon/></div>
+                <div className='border rounded-full bg-zinc-700 text-zinc-300 text-center ' onClick={() => {navigate('/home')}}><ArrowBackIosIcon/></div>
             </div>
             <div>
                 <AccountDropdown />
