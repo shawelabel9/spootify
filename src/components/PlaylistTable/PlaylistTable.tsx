@@ -76,7 +76,6 @@ const rows = [
   createData(13, 'Looped', 'kiasmos', "3 days ago","6:01"),
   createData(14, 'Looped', 'kiasmos', "3 days ago","6:01"),
   createData(15, 'Looped', 'kiasmos', "3 days ago","6:01"),
-
 ];
 
 export default function StickyHeadTable() {

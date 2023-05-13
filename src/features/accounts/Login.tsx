@@ -25,7 +25,7 @@ const Login = () => {
           <Divider />
           <div className="my-8 text-center flex flex-col gap-4">
             <p><strong >Don't have an account?</strong></p>
-            <StyledButton variant="contained" onClick={() => {navigate('/signup')}}>SIGN UP FOR SPOTIFY</StyledButton>
+            <StyledButton variant="contained" onClick={() => {navigate('/sign-up')}}>SIGN UP FOR SPOTIFY</StyledButton>
           </div>
         </div>
 
