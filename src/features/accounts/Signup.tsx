@@ -5,8 +5,10 @@ import TextField from '@mui/material/TextField'
 import {StyledButton} from '../../components/Button/Button'
 import {useNavigate} from 'react-router-dom'
 import Button from '@mui/material/Button'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { auth } from '../../services/firebase/firebase'
+import { useDispatch } from 'react-redux'
+import { setTimeActive } from '../../Redux/reducer'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -14,6 +16,7 @@ const Signup = () => {
   const [password,setPassword] = useState("")
   const [confirmPass,setConfirmPass] = useState("")
   const [error,setError] = useState("")
+  const dispatch = useDispatch()
 
   const validatePass = () => {
     let isValid = true
@@ -36,7 +39,14 @@ const Signup = () => {
     if(validatePass()){
       try{
         createUserWithEmailAndPassword(auth,email,password)
-        .then((res) => console.log(res.user) )
+        .then((currentUser) => { 
+          sendEmailVerification(currentUser.user)
+            .then(() => {
+              dispatch(setTimeActive(true))
+              navigate('/verify-email');
+            })
+            .catch((err) => {console.log(err)})
+           } )
         .catch((err) => console.log(err.message) )
       }catch(e:any){
         console.log(e.message)
